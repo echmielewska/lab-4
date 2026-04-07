@@ -5,6 +5,7 @@ namespace lab_4
         // UI controls added in designer
         private PictureBox pictureBox;
         private Button loadButton;
+        private Button onlyGreenButton;
 
 
         private Bitmap? currentBitmap;
@@ -33,5 +34,32 @@ namespace lab_4
                 }
             }
         }
+        private void OnlyGreenButton_Click(object? sender, EventArgs e)
+        {
+            if (currentBitmap == null) return;
+            KeepOnlyGreen(currentBitmap);
+            pictureBox.Refresh();
+        }
+
+        private void KeepOnlyGreen(Bitmap bmp)
+        {
+            for (int y = 0; y < bmp.Height; y++)
+            {
+                for (int x = 0; x < bmp.Width; x++)
+                {
+                    var c = bmp.GetPixel(x, y);
+                    // classify as green if G is strictly greater than R and B
+                    if (c.G > c.R && c.G > c.B)
+                    {
+                        // keep original
+                    }
+                    else
+                    {
+                        bmp.SetPixel(x, y, Color.Black);
+                    }
+                }
+            }
+        }
+
     }
 }

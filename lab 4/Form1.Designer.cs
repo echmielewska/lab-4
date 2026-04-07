@@ -48,6 +48,13 @@
             loadButton.Click += LoadButton_Click;
             Controls.Add(loadButton);
 
+            onlyGreenButton = new Button();
+            onlyGreenButton.Text = "Only Green";
+            onlyGreenButton.Location = new Point(12, 162);
+            onlyGreenButton.Size = new Size(180, 40);
+            onlyGreenButton.Click += OnlyGreenButton_Click;
+            Controls.Add(onlyGreenButton);
+
         #endregion
         }
     }
