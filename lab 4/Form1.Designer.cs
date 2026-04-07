@@ -48,6 +48,35 @@
             loadButton.Click += LoadButton_Click;
             Controls.Add(loadButton);
 
+            rotateButton = new Button();
+            rotateButton.Text = "Rotate";
+            rotateButton.Location = new Point(12, 12);
+            rotateButton.Size = new Size(180, 40);
+            rotateButton.Click += RotateButton_Click;
+            Controls.Add(rotateButton);
+
+            rotate90Radio = new RadioButton();
+            rotate90Radio.Text = "90°";
+            rotate90Radio.Location = new Point(12, 210);
+            rotate90Radio.AutoSize = true;
+            Controls.Add(rotate90Radio);
+
+            rotate180Radio = new RadioButton();
+            rotate180Radio.Text = "180°";
+            rotate180Radio.Location = new Point(12, 235);
+            rotate180Radio.AutoSize = true;
+            Controls.Add(rotate180Radio);
+
+            rotate270Radio = new RadioButton();
+            rotate270Radio.Text = "270°";
+            rotate270Radio.Location = new Point(12, 260);
+            rotate270Radio.AutoSize = true;
+            Controls.Add(rotate270Radio);
+
+            // default selection
+            rotate90Radio.Checked = true;
+
+
         #endregion
         }
     }

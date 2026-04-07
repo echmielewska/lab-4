@@ -5,6 +5,12 @@ namespace lab_4
         // UI controls added in designer
         private PictureBox pictureBox;
         private Button loadButton;
+        private Button rotateButton;
+
+        private RadioButton rotate90Radio;
+        private RadioButton rotate180Radio;
+        private RadioButton rotate270Radio;
+
 
 
         private Bitmap? currentBitmap;
@@ -33,5 +39,20 @@ namespace lab_4
                 }
             }
         }
+
+        private void RotateButton_Click(object? sender, EventArgs e)
+        {
+            if (currentBitmap == null) return;
+            if (rotate90Radio.Checked)
+                currentBitmap.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            else if (rotate180Radio.Checked)
+                currentBitmap.RotateFlip(RotateFlipType.Rotate180FlipNone);
+            else if (rotate270Radio.Checked)
+                currentBitmap.RotateFlip(RotateFlipType.Rotate270FlipNone);
+
+            pictureBox.Image = currentBitmap;
+            pictureBox.Refresh();
+        }
+
     }
 }
