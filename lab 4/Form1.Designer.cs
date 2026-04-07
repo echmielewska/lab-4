@@ -48,12 +48,57 @@
             loadButton.Click += LoadButton_Click;
             Controls.Add(loadButton);
 
+
             onlyGreenButton = new Button();
             onlyGreenButton.Text = "Only Green";
             onlyGreenButton.Location = new Point(12, 162);
             onlyGreenButton.Size = new Size(180, 40);
             onlyGreenButton.Click += OnlyGreenButton_Click;
             Controls.Add(onlyGreenButton);
+
+            rotateButton = new Button();
+            rotateButton.Text = "Rotate";
+            rotateButton.Location = new Point(12, 12);
+            rotateButton.Size = new Size(180, 40);
+            rotateButton.Click += RotateButton_Click;
+            Controls.Add(rotateButton);
+
+            invertButton = new Button();
+            invertButton.Text = "Invert Colors";
+            invertButton.Location = new Point(12, 62);
+            invertButton.Size = new Size(180, 40);
+            invertButton.Click += InvertButton_Click;
+            Controls.Add(invertButton);
+
+            upsideDownButton = new Button();
+            upsideDownButton.Text = "Upside Down";
+            upsideDownButton.Location = new Point(12, 112);
+            upsideDownButton.Size = new Size(180, 40);
+            upsideDownButton.Click += UpsideDownButton_Click;
+            Controls.Add(upsideDownButton);
+
+            rotate90Radio = new RadioButton();
+            rotate90Radio.Text = "90°";
+            rotate90Radio.Location = new Point(12, 210);
+            rotate90Radio.AutoSize = true;
+            Controls.Add(rotate90Radio);
+
+            rotate180Radio = new RadioButton();
+            rotate180Radio.Text = "180°";
+            rotate180Radio.Location = new Point(12, 235);
+            rotate180Radio.AutoSize = true;
+            Controls.Add(rotate180Radio);
+
+            rotate270Radio = new RadioButton();
+            rotate270Radio.Text = "270°";
+            rotate270Radio.Location = new Point(12, 260);
+            rotate270Radio.AutoSize = true;
+            Controls.Add(rotate270Radio);
+
+            // default selection
+            rotate90Radio.Checked = true;
+
+
 
         #endregion
         }
