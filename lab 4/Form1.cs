@@ -6,6 +6,9 @@ namespace lab_4
         private PictureBox pictureBox;
         private Button loadButton;
         private Button rotateButton;
+        private Button invertButton;
+        private Button upsideDownButton;
+
 
         private RadioButton rotate90Radio;
         private RadioButton rotate180Radio;
@@ -53,6 +56,33 @@ namespace lab_4
             pictureBox.Image = currentBitmap;
             pictureBox.Refresh();
         }
+        private void InvertButton_Click(object? sender, EventArgs e)
+        {
+            if (currentBitmap == null) return;
+            InvertColors(currentBitmap);
+            pictureBox.Refresh();
+        }
+
+        private void UpsideDownButton_Click(object? sender, EventArgs e)
+        {
+            if (currentBitmap == null) return;
+            currentBitmap.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            pictureBox.Refresh();
+        }
+
+        private void InvertColors(Bitmap bmp)
+        {
+            for (int y = 0; y < bmp.Height; y++)
+            {
+                for (int x = 0; x < bmp.Width; x++)
+                {
+                    var c = bmp.GetPixel(x, y);
+                    var nc = Color.FromArgb(c.A, 255 - c.R, 255 - c.G, 255 - c.B);
+                    bmp.SetPixel(x, y, nc);
+                }
+            }
+        }
+
 
     }
 }

@@ -55,6 +55,20 @@
             rotateButton.Click += RotateButton_Click;
             Controls.Add(rotateButton);
 
+            invertButton = new Button();
+            invertButton.Text = "Invert Colors";
+            invertButton.Location = new Point(12, 62);
+            invertButton.Size = new Size(180, 40);
+            invertButton.Click += InvertButton_Click;
+            Controls.Add(invertButton);
+
+            upsideDownButton = new Button();
+            upsideDownButton.Text = "Upside Down";
+            upsideDownButton.Location = new Point(12, 112);
+            upsideDownButton.Size = new Size(180, 40);
+            upsideDownButton.Click += UpsideDownButton_Click;
+            Controls.Add(upsideDownButton);
+
             rotate90Radio = new RadioButton();
             rotate90Radio.Text = "90°";
             rotate90Radio.Location = new Point(12, 210);
